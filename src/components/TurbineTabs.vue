@@ -1,10 +1,10 @@
 <template>
-<div></div>    
+    <tabs></tabs>
 </template>
 
 <script>
     export default {
-        name: "Desk"
+        name: "turbine-tabs"
     }
 </script>
 

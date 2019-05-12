@@ -1,22 +1,9 @@
 <template>
     <div>
-        <div class="card text-white bg-dark mb-3" >
-            <div class="card-header">Detail Of Area</div>
+        <div class="card mb-3">
+            <div class="card-header">{{area.name}} - #({{area.id}})</div>
             <div class="card-body">
-                <ul class="nav nav-tabs card-header-tabs">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Desk1</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Desk2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" >Desk3</a>
-                    </li>
-                </ul>
-                <br>
-                <br>
-
+                <turbine-tabs></turbine-tabs>
             </div>
         </div>
     </div>
@@ -25,7 +12,24 @@
 <script>
     export default {
         name: 'Detail',
+        props: {
+            area: {
+                type: Object,
+                required: true
+            }
+        },
         data() {
+            return {
+                tribunes: []
+            }
+        },
+        watch: {
+            "area.id": {
+                handler: (newArea) => {
+                    fetch(`localhost:6754/tribune/${newArea.id}`).then(response => this.tribunes = response.json());
+                },
+                immediate: true // it provides handler run immediately
+            }
         }
     }
 </script>

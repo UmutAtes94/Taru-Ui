@@ -1,24 +1,24 @@
 <template>
-  <div id="app" class="container">
-    <Map/>
-    <Detail/>
-    <Graph/>
-  </div>
+    <div id="app" class="container">
+        <turkish-map></turkish-map>
+        <detail :area="area"></detail>
+    </div>
 </template>
 
 <script>
-import Map from './components/Map.vue'
-import Detail from './components/Detail.vue'
-import Desk from './components/Desk.vue'
-import  Graph from './components/Graph'
+    import TurkishMap from './components/TurkishMap.vue'
+    import Detail from './components/Detail.vue'
 
-export default {
-
-  components: {
-    Map,
-    Detail,
-    Desk,
-    Graph
-  }
-}
+    export default {
+        components: {
+            Detail,
+            TurkishMap
+        },
+        name: "app",
+        data() {
+            return {
+                area: {name: 'default', id: 0}
+            }
+        }
+    }
 </script>
