@@ -1,7 +1,7 @@
 <template>
     <div id="app" class="container">
-        <turkish-map></turkish-map>
-        <detail :area="area"></detail>
+        <turkish-map @updateAreaName="updateAreaName"></turkish-map>
+        <detail :area-name="areaName"></detail>
     </div>
 </template>
 
@@ -17,7 +17,12 @@
         name: "app",
         data() {
             return {
-                area: {name: 'default', id: 0}
+                areaName: ""
+            }
+        },
+        methods: {
+            updateAreaName(areaName) {
+                this.areaName = areaName;
             }
         }
     }

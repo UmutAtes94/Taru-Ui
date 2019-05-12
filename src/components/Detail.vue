@@ -1,23 +1,19 @@
 <template>
     <b-card class="mb-12">
-        <b-card-header>{{title}}</b-card-header>
-        <b-card-text>
-            <turbine-tabs></turbine-tabs>
-        </b-card-text>
-
-        <b-button href="#" variant="primary">Go somewhere</b-button>
+        <h4 slot="header">{{title}}</h4>
+        <turbine-tabs slot="body"></turbine-tabs>
     </b-card>
 </template>
 
 <script>
-    import TurbineTabs from "./TurbineTabs";
+    import TurbineTabs from "./turbine/TurbineTabs";
 
     export default {
         name: 'Detail',
         components: {TurbineTabs},
         props: {
-            area: {
-                type: Object,
+            areaName: {
+                type: String,
                 required: true
             }
         },
@@ -28,13 +24,13 @@
         },
         computed: {
             title() {
-                return `${this.area.name} Bölgesi`;
+                return `${this.areaName} Bölgesi`;
             }
         },
         watch: {
             "area.id": {
-                handler: (newArea) => {
-                    fetch(`http://localhost:6754/tribune/${newArea.id}`).then(response => this.tribunes = response.json());
+                handler: (areaName) => {
+                    fetch(`http://localhost:6754/tribune/${areaName}`).then(response => this.tribunes = response.json());
                 },
                 immediate: true // it provides handler run immediately
             }
