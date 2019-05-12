@@ -39,6 +39,10 @@
       "autoprefixer": {}
     }
   },
+   "repository":{
+    "type": "git",
+    "url" : "https://github.com/UmutAtes94/Taru-ui.git"
+},
   "browserslist": [
     "> 1%",
     "last 2 versions"
