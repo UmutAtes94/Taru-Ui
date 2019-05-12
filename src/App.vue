@@ -12,8 +12,6 @@ import Detail from './components/Detail.vue'
 import Desk from './components/Desk.vue'
 import  Graph from './components/Graph'
 
-
-
 export default {
 
   components: {
@@ -24,6 +22,3 @@ export default {
   }
 }
 </script>
-
-<style>
-</style>

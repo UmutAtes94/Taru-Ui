@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "bootstrap-vue": "^2.0.0-rc.19",
     "core-js": "^2.6.5",
     "vue": "^2.6.10"
   },
@@ -39,10 +40,10 @@
       "autoprefixer": {}
     }
   },
-   "repository":{
+  "repository": {
     "type": "git",
-    "url" : "https://github.com/UmutAtes94/Taru-ui.git"
-},
+    "url": "https://github.com/UmutAtes94/Taru-ui.git"
+  },
   "browserslist": [
     "> 1%",
     "last 2 versions"
