@@ -1,10 +1,5 @@
 <template>
     <div>
-        <div class="il-isimleri">
-            <h1>
-                {{ilAdi}}
-            </h1>
-        </div>
         <div class="svg-turkiye-haritasi mt-5">
             <svg version="1.1"
                  id="svg-turkiye-haritasi"
@@ -266,6 +261,11 @@
           </g>
         </g>
       </svg>
+        </div>
+        <div class="il-isimleri">
+            <h1>
+                {{ilAdi}}
+            </h1>
         </div>
     </div>
 </template>

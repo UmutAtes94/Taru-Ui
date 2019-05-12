@@ -1,5 +1,5 @@
 <template>
-    <tabs></tabs>
+    <b-tabs></b-tabs>
 </template>
 
 <script>
