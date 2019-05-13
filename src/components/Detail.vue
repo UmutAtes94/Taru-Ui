@@ -7,6 +7,7 @@
 
 <script>
     import TurbineTabs from "./turbine/TurbineTabs";
+    import {getTurbines} from "../services/TurbineService";
 
     export default {
         name: 'Detail',
@@ -19,7 +20,7 @@
         },
         data() {
             return {
-                tribunes: []
+                turbines: []
             }
         },
         computed: {
@@ -29,10 +30,8 @@
         },
         watch: {
             "area.id": {
-                handler: (areaName) => {
-                    fetch(`http://localhost:6754/tribune/${areaName}`).then(response => this.tribunes = response.json());
-                },
-                immediate: true // it provides handler run immediately
+                handler: (areaName) => getTurbines(areaName).then(turbines => this.turbines = turbines),
+                immediate: true
             }
         }
     }

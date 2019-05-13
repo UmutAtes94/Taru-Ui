@@ -278,12 +278,6 @@
                 node.addEventListener("click", () => {
                   this.ilAdi = node.getAttribute('data-iladi');
                   this.$emit("updateAreaName", this.ilAdi);
-                    window.location.href = (
-                        '#'
-                        + node.getAttribute('id')
-                        + '-'
-                        + node.getAttribute('data-plakakodu')
-                    );
                 });
             });
         }
@@ -300,22 +294,6 @@
     .svg-turkiye-haritasi svg {
         width: 100%;
         height: auto;
-    }
-
-    .il-isimleri {
-        position: absolute;
-        z-index: 2;
-    }
-
-    .il-isimleri div {
-        font-family: 'Open Sans', serif;
-        display: inline-block;
-        background: #1094F6;
-        color: #fff;
-        padding: 8px 16px;
-        -webkit-border-radius: 4px;
-        -moz-border-radius: 4px;
-        border-radius: 4px;
     }
 
     #svg-turkiye-haritasi path {
